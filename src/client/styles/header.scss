@@ -1,0 +1,31 @@
+.header{
+  background-color: aqua;
+  
+  &__logo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkred;
+  }
+  
+  &__top{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__menu{
+    display: flex;
+    
+    & li{
+      margin-right: 50px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(76, 4, 124);
+  }
+}

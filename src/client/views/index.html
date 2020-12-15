@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Travel APP</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__top">
+				<div class="header__logo">
+					<p class="logo">Bahodir Media Travel</p>
+				</div>
+				<nav class="header__nav">
+					<ul class="header__menu">
+						<li><a href="" class="header__link">Instructions</a></li>
+						<li><a href="" class="header__link">About</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<h1 class="main__title">Plan your journey with us</h1>
+			<div class="row">
+				<div class="col-xl-4">
+					<form class="form" onsubmit="return Client.handleSubmit(event)">
+						<label for="from" class="form__label">Where do you start the journey</label>
+						<input id="from" class="form__input" type="text" name="input" value="" placeholder="From"
+							onfocus="this.value=''">
+						<label for="to" class="form__label">Where are you going?</label>
+						<input id="to" class="form__input" type="text" name="input" value="" placeholder="To"
+							onfocus="this.value=''">
+						<label for="date" class="form__label">Your departing time?</label>
+						<input id="date" class="form__input form__date" type="date" name="input" onfocus="this.value=''">
+						<input id="submit" class="form__submit" type="submit" name="" value="submit"
+							onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+					</form>
+				</div>
+				<div class="col-xl-4">
+					<p class="results">You are going to: <span id="city"></span></p>
+					<p class="results">From: <span id="city2"></span></p>
+					<p class="results">Departing on: <span id="depart"></span></p>
+					<p class="results">To trip <span id="days"></span> days left</p>
+					<p class="results">Weather will be: <span id="temp"></span>&#176;C</p>
+					<p class="results">Description: <span id="description"></span><img id="cloud" src="" alt=""></p>
+					<button id="print" onclick="window.print();" class="results__print">Print</button>
+					<button id="save" class="results__save">Save</button>
+				</div>
+				<div class="col-xl-4">
+					<img src="../views/img/moscow.jpg" alt="city" id="cityimg" class="city">
+				</div>
+			</div>
+			<h2 class="main__title">Weekly weather of <span id="city_name">Tashkent</span></h2>
+			<div class="weather__cards">
+				<div class="weather__card">
+					<p class="week__one">Monday</p>
+					<p class="temp temp__1">25<span>&#176;C</span></p>
+					<p><img id="cloud__1" src="" alt=""></p>
+					<p class="info__1">test</p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Tuesday</p>
+					<p class="temp temp__2">25<span>&#176;C</span></p>
+					<p><img id="cloud__2" src="" alt=""></p>
+					<p class="info__2"></p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Wednesday</p>
+					<p class="temp temp__3">25<span>&#176;C</span></p>
+					<p><img id="cloud__3" src="" alt=""></p>
+					<p class="info__3"></p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Thursday</p>
+					<p class="temp temp__4">25<span>&#176;C</span></p>
+					<p><img id="cloud__4" src="" alt=""></p>
+					<p class="info__4"></p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Friday</p>
+					<p class="temp temp__5">25<span>&#176;C</span></p>
+					<p><img id="cloud__5" src="" alt=""></p>
+					<p class="info__5"></p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Saturday</p>
+					<p class="temp temp__6">25<span>&#176;C</span></p>
+					<p><img id="cloud__6" src="" alt=""></p>
+					<p class="info__6"></p>
+				</div>
+				<div class="weather__card">
+					<p class="week__one">Sunday</p>
+					<p class="temp temp__7">25<span>&#176;C</span></p>
+					<p><img id="cloud__7" src="" alt=""></p>
+					<p class="info__7"></p>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+
+
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+</body>
+
+</html>

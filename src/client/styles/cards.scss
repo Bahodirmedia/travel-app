@@ -1,0 +1,29 @@
+.weather__cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.weather__card {
+  width: 150px;
+  background-color: #fff;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.week__one,
+.info{
+  font-weight: bold;
+  color: darkorange;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 25px;
+  color: blue;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}

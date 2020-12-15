@@ -1,0 +1,33 @@
+.form{
+  &__label{
+    display: block;
+    margin: 10px 10px 10px 20px;
+    color:darkorange;
+    font-style: italic;
+  }
+  
+  &__input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 20px;
+  }
+  
+  &__date {
+    display: inline-block;
+    width: 70%;
+  }
+  
+  &__submit{
+    height: 40px;
+    width: 28%;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    background: darkorange;
+    border: 1px solid blueviolet;
+  }
+}

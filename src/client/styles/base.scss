@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  outline: 1px solid red;
+}
+
+.main {
+  &__title  {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color: chocolate;
+  }
+}
+ .results{
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 18px;
+   color: chocolate;
+   
+   & span {
+     color: darkblue;
+     font-style: italic;
+   }
+ }
+ 
+ button {
+  height: 40px;
+  width: 28%;
+  border-radius: 10px;
+  outline: none;
+  text-transform: uppercase;
+  background: darkorange;
+  border: 1px solid blueviolet;
+ }
+ 
+ .col-xl-4{
+   margin-bottom: 20px;
+ }
