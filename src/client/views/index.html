@@ -12,22 +12,30 @@
 		<div class="container">
 			<div class="header__top">
 				<div class="header__logo">
-					<p class="logo">Bahodir Media Travel</p>
+					<p class="logo">Bahodir Media</p>
 				</div>
 				<nav class="header__nav">
 					<ul class="header__menu">
-						<li><a href="" class="header__link">Instructions</a></li>
+						<li><a data-modal="modal-one"  class="header__link">Instructions</a></li>
 						<li><a href="" class="header__link">About</a></li>
 					</ul>
 				</nav>
 			</div>
+			<div class="modal" id="modal-one">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+          <h1>Welcome to application</h1>
+          <p>Please fill the inputs insert the name of the city which you are going.</p>
+          <a class="modal-close modal-exit">Close</a>
+        </div>
+      </div>
 		</div>
 	</header>
 	<main class="main">
-		<div class="container">
+		<div class="container main__container">
 			<h1 class="main__title">Plan your journey with us</h1>
 			<div class="row">
-				<div class="col-xl-4">
+				<div class="col-xl-3">
 					<form class="form" onsubmit="return Client.handleSubmit(event)">
 						<label for="from" class="form__label">Where do you start the journey</label>
 						<input id="from" class="form__input" type="text" name="input" value="" placeholder="From"
@@ -41,7 +49,7 @@
 							onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
 					</form>
 				</div>
-				<div class="col-xl-4">
+				<div class="col-xl-5 weather">
 					<p class="results">You are going to: <span id="city"></span></p>
 					<p class="results">From: <span id="city2"></span></p>
 					<p class="results">Departing on: <span id="depart"></span></p>
@@ -50,56 +58,17 @@
 					<p class="results">Description: <span id="description"></span><img id="cloud" src="" alt=""></p>
 					<button id="print" onclick="window.print();" class="results__print">Print</button>
 					<button id="save" class="results__save">Save</button>
+					<button id="clear" class="results__clear">Clear</button>
 				</div>
 				<div class="col-xl-4">
-					<img src="../views/img/moscow.jpg" alt="city" id="cityimg" class="city">
+					<img src="" alt="" id="cityimg" class="city">
 				</div>
 			</div>
-			<h2 class="main__title">Weekly weather of <span id="city_name">Tashkent</span></h2>
+			<h2 class="main__title">Your saved trips </h2>
 			<div class="weather__cards">
-				<div class="weather__card">
-					<p class="week__one">Monday</p>
-					<p class="temp temp__1">25<span>&#176;C</span></p>
-					<p><img id="cloud__1" src="" alt=""></p>
-					<p class="info__1">test</p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Tuesday</p>
-					<p class="temp temp__2">25<span>&#176;C</span></p>
-					<p><img id="cloud__2" src="" alt=""></p>
-					<p class="info__2"></p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Wednesday</p>
-					<p class="temp temp__3">25<span>&#176;C</span></p>
-					<p><img id="cloud__3" src="" alt=""></p>
-					<p class="info__3"></p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Thursday</p>
-					<p class="temp temp__4">25<span>&#176;C</span></p>
-					<p><img id="cloud__4" src="" alt=""></p>
-					<p class="info__4"></p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Friday</p>
-					<p class="temp temp__5">25<span>&#176;C</span></p>
-					<p><img id="cloud__5" src="" alt=""></p>
-					<p class="info__5"></p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Saturday</p>
-					<p class="temp temp__6">25<span>&#176;C</span></p>
-					<p><img id="cloud__6" src="" alt=""></p>
-					<p class="info__6"></p>
-				</div>
-				<div class="weather__card">
-					<p class="week__one">Sunday</p>
-					<p class="temp temp__7">25<span>&#176;C</span></p>
-					<p><img id="cloud__7" src="" alt=""></p>
-					<p class="info__7"></p>
-				</div>
+				
 			</div>
+			<button id="clear__saved" class="results__clear">Clear all</button>
 		</div>
 	</main>
 
@@ -114,6 +83,11 @@
 			});
 		}
 	</script>
+	
+	<script>
+
+	</script>
+	
 </body>
 
 </html>

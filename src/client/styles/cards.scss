@@ -1,7 +1,9 @@
 .weather__cards{
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-height: 270px;
 }
 
 .weather__card {
@@ -11,6 +13,8 @@
   border-radius: 10px;
   text-align: center;
   padding: 10px;
+  margin-bottom: 20px;
+  
 }
 
 .week__one,
@@ -25,5 +29,5 @@
   color: blue;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }

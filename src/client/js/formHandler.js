@@ -5,16 +5,22 @@ import {
 	weatherInfo
 } from './weatherInfo'
 import {
-	cityImg
-} from './cityImg'
-import {
 	show
 } from './show'
 
-const GEONAMES_USERNAME = 'bahodir_media';
-//Pixabay
-const PIXABAY_API_KEY = '19509353-9c8b90d5b1914625113889dbf';
+let reset = document.querySelector('#clear');
+let save = document.querySelector('#save');
+//Clear the window
+reset.addEventListener('click', () => {
+	// document.reload();
+	location.reload();
+});
+save.addEventListener('click', function (e) {
+  divMaker(allData);
+});
 
+
+//Main event
 let handleSubmit = (e) => {
 	e.preventDefault()
 	// Information from user inputs
@@ -26,36 +32,32 @@ let handleSubmit = (e) => {
 
 	//Validating inputs
 	Client.checkInputs(fromCity, toCity)
-
 	//When evertything good we sort data
 	if (fromCity, toCity) {
-		cityData(toCity, GEONAMES_USERNAME)
+		cityData(toCity,)
 			//Getting data from Geonames API		
 			.then((cityData) => {
 				console.log(cityData);
 				const latitude = cityData.geonames[0].lat;
 				const longitude = cityData.geonames[0].lng;
+				toCity = cityData.geonames[0].toponymName
 				const weatherData = weatherInfo(latitude, longitude)
 				return weatherData;
 			}) //Getting data from Weatherbit API		
 			.then((weatherData) => {
 				console.log(weatherData);
-				const daysCount = Math.round((time - timeNow) / 86400);
+				const daysCount = Math.round((time - timeNow) / (60 * 60 * 24));
+				// const pixabayImg = cityImg(toCity);
 				const allData = postAllData('http://localhost:8081/addData', {
 					fromCity,
 					toCity,
 					weather: weatherData.data[0].high_temp,
 					icon: weatherData.data[0].weather.icon,
 					description: weatherData.data[0].weather.description,
-					daysCount
+					daysCount,
 				});
 				return allData
 			})
-			// .then((allData) => {
-			// 	console.log(allData);
-			// 	const cityImg = cityImg(allData.toCity)
-			// 	return cityImg;
-			// })
 			.then((allData) => {
 				show(allData);
 			})
@@ -80,7 +82,8 @@ let postAllData = async (url = '', data = {}) => {
 			weather: data.weather,
 			icon: data.icon,
 			description: data.description,
-			daysCount: data.daysCount
+			daysCount: data.daysCount,
+			image: data.pixabayImg
 		})
 	})
 	try {
@@ -92,6 +95,23 @@ let postAllData = async (url = '', data = {}) => {
 	}
 }
 
+
+let modals = document.querySelectorAll('[data-modal]');
+
+modals.forEach(function(trigger) {
+  trigger.addEventListener('click', function(event) {
+    event.preventDefault();
+    let modal = document.getElementById(trigger.dataset.modal);
+    modal.classList.add('open');
+    let exits = modal.querySelectorAll('.modal-exit');
+    exits.forEach(function(exit) {
+      exit.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.classList.remove('open');
+      });
+    });
+  });
+});
 
 export {
 	handleSubmit

@@ -39,9 +39,9 @@ app.post('/addData', async function (req, res) {
 	projectData.fromCity = data.fromCity;
 	projectData.toCity = data.toCity;
 	projectData.toDate = data.toDate;
-	projectData.weather1 = data.weather;
-	projectData.icon1 = data.icon;
-	projectData.description1 = data.description;
+	projectData.weather = data.weather;
+	projectData.icon = data.icon;
+	projectData.description = data.description;
 	projectData.daysCount = data.daysCount;
 	res.send(projectData);
 })

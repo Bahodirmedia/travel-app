@@ -2,7 +2,7 @@
   &__label{
     display: block;
     margin: 10px 10px 10px 20px;
-    color:darkorange;
+    color:white;
     font-style: italic;
   }
   
@@ -29,5 +29,14 @@
     text-transform: uppercase;
     background: darkorange;
     border: 1px solid blueviolet;
+    box-shadow: 0 5px #d67e0b;
+    &:hover{
+      background-color: #f8a63b;
+    }
+    &:active {
+      background-color: #f8a63b;
+      box-shadow: 0 2px #d67e0b;
+      transform: translateY(4px);
+    }
   }
 }
